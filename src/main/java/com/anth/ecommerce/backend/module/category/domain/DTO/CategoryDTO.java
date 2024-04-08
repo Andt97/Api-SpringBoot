@@ -29,4 +29,7 @@ public class CategoryDTO {
         this.updatedBy = updatedBy;
     }
 
+    public CategoryDTO() {
+
+    }
 }
