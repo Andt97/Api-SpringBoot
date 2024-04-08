@@ -17,16 +17,6 @@ public class CategoryDTO {
     private Integer updatedBy;
 
 
-    public CategoryDTO(Long id, String categoryName, String status, Date createdAt, Integer createdBy, Date updatedAt, Integer updatedBy) {
-        this.id = id;
-        this.categoryName = categoryName;
-        this.status = status;
-        this.createdAt = createdAt;
-        this.createdBy = createdBy;
-        this.updatedAt = updatedAt;
-        this.updatedBy = updatedBy;
-    }
-
     public CategoryDTO() {
 
     }
