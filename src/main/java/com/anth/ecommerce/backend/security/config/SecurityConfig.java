@@ -8,6 +8,7 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -31,7 +32,6 @@ public class SecurityConfig {
                 .authorizeHttpRequests((authorizeHttpRequests) ->
                         authorizeHttpRequests
                                 .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
-
                                 .requestMatchers("/api/auth/**").permitAll().anyRequest().authenticated());
 
 
@@ -39,8 +39,8 @@ public class SecurityConfig {
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .cors(Customizer.withDefaults());
-        ;
-        return  http.csrf((csrf) -> csrf.disable()).build();
+
+        return  http.csrf(AbstractHttpConfigurer::disable).build();
 
     }
 
