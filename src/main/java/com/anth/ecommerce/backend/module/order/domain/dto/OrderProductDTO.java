@@ -2,9 +2,13 @@ package com.anth.ecommerce.backend.module.order.domain.dto;
 
 import com.anth.ecommerce.backend.module.order.domain.Order;
 import com.anth.ecommerce.backend.module.product.domain.Product;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
+@Getter
+@Setter
 public class OrderProductDTO {
 
     private Integer id;
@@ -26,43 +30,4 @@ public class OrderProductDTO {
         this.createdAt = createdAt;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
 }

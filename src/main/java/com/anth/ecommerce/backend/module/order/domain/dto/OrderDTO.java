@@ -4,7 +4,11 @@ package com.anth.ecommerce.backend.module.order.domain.dto;
 
 
 import com.anth.ecommerce.backend.module.user.domain.User;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class OrderDTO {
     private Integer id;
     private User user;
@@ -18,19 +22,5 @@ public class OrderDTO {
         this.user = user;
     }
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }
