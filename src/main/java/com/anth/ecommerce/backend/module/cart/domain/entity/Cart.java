@@ -2,6 +2,7 @@ package com.anth.ecommerce.backend.module.cart.domain.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+
 @Getter
 @Setter
 @AllArgsConstructor

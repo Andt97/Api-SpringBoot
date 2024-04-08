@@ -1,7 +1,6 @@
 package com.anth.ecommerce.backend.module.cart.infraestructure.controller;
 
 import com.anth.ecommerce.backend.module.cart.application.service.CartItemService;
-import com.anth.ecommerce.backend.module.cart.domain.dto.CartDTO;
 import com.anth.ecommerce.backend.module.cart.domain.dto.CartItemDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

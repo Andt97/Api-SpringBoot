@@ -2,7 +2,6 @@ package com.anth.ecommerce.backend.module.product.domain.dto;
 
 import com.anth.ecommerce.backend.advice.validation.anotation.ValidName;
 import com.anth.ecommerce.backend.advice.validation.anotation.ValueRequired;
-import com.anth.ecommerce.backend.module.category.domain.Category;
 import lombok.*;
 
 import java.util.Date;

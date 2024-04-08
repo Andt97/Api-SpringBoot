@@ -1,6 +1,5 @@
 package com.anth.ecommerce.backend.module.cart.domain.entity;
 
-import com.anth.ecommerce.backend.module.cart.domain.entity.Cart;
 import com.anth.ecommerce.backend.module.product.domain.Product;
 import jakarta.persistence.*;
 import lombok.*;

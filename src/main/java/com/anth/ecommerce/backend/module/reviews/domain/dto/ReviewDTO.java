@@ -1,9 +1,6 @@
 package com.anth.ecommerce.backend.module.reviews.domain.dto;
 
 import com.anth.ecommerce.backend.module.product.domain.Product;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
 import java.util.Date;
 

@@ -4,14 +4,11 @@ import com.anth.ecommerce.backend.module.user.domain.User;
 import com.anth.ecommerce.backend.module.user.domain.dto.UserDTO;
 import com.anth.ecommerce.backend.module.user.infraestructure.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+
 
 @Service
 @RequiredArgsConstructor
