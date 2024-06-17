@@ -19,29 +19,27 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @EnableWebSecurity
 @RequiredArgsConstructor
 @CrossOrigin
+
 public class SecurityConfig {
-    private final JwtAuthenticationFilter jwtAuthFilter;
-
-    private final AuthenticationProvider authenticationProvider;
-
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception
-    {
-
-        http
-                .authorizeHttpRequests((authorizeHttpRequests) ->
-                        authorizeHttpRequests
-                                .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                                .requestMatchers("/api/auth/**").permitAll().anyRequest().authenticated());
-
-
-        http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        private final JwtAuthenticationFilter jwtAuthFilter;
+        private final AuthenticationProvider authenticationProvider;
+    
+        @Bean
+        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+            http
+                .authorizeHttpRequests(authorizeRequests -> authorizeRequests
+                    .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                    .requestMatchers("/api/auth/**").permitAll()
+                    .anyRequest().authenticated()
+                )
+                .sessionManagement(session -> session
+                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                )
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
-                .cors(Customizer.withDefaults());
-
-        return  http.csrf(AbstractHttpConfigurer::disable).build();
-
+                .cors(Customizer.withDefaults())
+                .csrf(AbstractHttpConfigurer::disable);
+    
+            return http.build();
+        }
     }
-
-}

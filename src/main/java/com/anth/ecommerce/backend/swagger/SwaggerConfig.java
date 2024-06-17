@@ -21,13 +21,10 @@ import org.springframework.context.annotation.Configuration;
         servers = {
                 @Server(url = "http://localhost:8080", description = "Development"),
                 @Server(url = "${api.server.url}", description = "Production")})
-
 public class SwaggerConfig {
 
     @Bean
-
     public OpenAPI customizeOpenAPI() {
-        //@formatter:off
         final String securitySchemeName = "bearerAuth";
         return new OpenAPI()
                 .addSecurityItem(new SecurityRequirement()
@@ -37,11 +34,7 @@ public class SwaggerConfig {
                                 .name(securitySchemeName)
                                 .type(SecurityScheme.Type.HTTP)
                                 .scheme("bearer")
-                                .description(
-                                        "Provide the JWT token. JWT token can be obtained from the Login API.")
+                                .description("Provide the JWT token. JWT token can be obtained from the Login API.")
                                 .bearerFormat("JWT")));
-        //@formatter:on
-
     }
-
 }
